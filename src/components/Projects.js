@@ -48,6 +48,55 @@ const Projects = () => {
     }
   ];
 
+  const handleContactClick = () => {
+    const email = 'suryanshsri10@gmail.com';
+    const subject = 'Collaboration Inquiry';
+    const body = "Hi Suryansh, I would like to work with you on...";
+
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(body);
+
+    // Prefer Gmail app if available
+    const gmailIOS = `googlegmail:///co?to=${email}&subject=${encodedSubject}&body=${encodedBody}`;
+    const gmailIOSAlt = `gmail:///co?to=${email}&subject=${encodedSubject}&body=${encodedBody}`;
+
+    // Fallbacks
+    const mailto = `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
+    const gmailWeb = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodedSubject}&body=${encodedBody}`;
+
+    // Try iOS/Android Gmail scheme first, then mailto, then web
+    const start = Date.now();
+    const tryOpen = (url) => {
+      try {
+        window.location.href = url;
+      } catch (_) {}
+    };
+
+    // Attempt primary Gmail scheme
+    tryOpen(gmailIOS);
+
+    // If it didn't switch apps within ~1s, try alternate scheme
+    setTimeout(() => {
+      if (Date.now() - start < 1200) {
+        tryOpen(gmailIOSAlt);
+      }
+    }, 600);
+
+    // Then fallback to mailto
+    setTimeout(() => {
+      if (Date.now() - start < 2400) {
+        tryOpen(mailto);
+      }
+    }, 1400);
+
+    // Finally fallback to Gmail web compose
+    setTimeout(() => {
+      if (Date.now() - start < 3600) {
+        window.open(gmailWeb, '_blank', 'noopener,noreferrer');
+      }
+    }, 2400);
+  };
+
   return (
     <section id="projects" className="py-16 sm:py-20 lg:py-24 gradient-bg">
       <div className="container-max section-padding">
@@ -174,14 +223,13 @@ const Projects = () => {
                 I'm always excited to work on new projects and challenges. 
                 Let's create something amazing together!
               </p>
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=suryanshsri10@gmail.com&su=Collaboration%20Inquiry&body=Hi%20Suryansh,%20I%20would%20like%20to%20work%20with%20you%20on..."
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={handleContactClick}
                 className="btn-primary text-lg px-8 py-3 hover:scale-105 transition-transform duration-300 inline-block"
               >
                 Let's Work Together
-              </a>
+              </button>
             </div>
           </div>
         </div>
