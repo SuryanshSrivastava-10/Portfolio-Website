@@ -42,7 +42,7 @@
     ]
   },
   "engines": {
-    "node": ">=16 <19"
+    "node": ">=22"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
