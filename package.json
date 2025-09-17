@@ -20,7 +20,8 @@
     "build:analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "preload": "node scripts/preload.js"
+    "preload": "node scripts/preload.js",
+    "postinstall": "node -e \"if (process.platform !== 'win32') { try { require('fs').chmodSync('node_modules/.bin/react-scripts', 0o755); } catch (e) { /* ignore */ } }\""
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +40,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": ">=16 <19"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
