@@ -15,7 +15,7 @@ A responsive one-page portfolio website built with React.js and Tailwind CSS, fe
 
 ### Prerequisites
 
-- Node.js (version 14 or higher)
+- Node.js (version 22 or higher)
 - npm or yarn package manager
 
 ### Installation
