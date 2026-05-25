@@ -15,7 +15,7 @@ A responsive one-page portfolio website built with React.js and Tailwind CSS, fe
 
 ### Prerequisites
 
-- Node.js (version 22 or higher)
+- Node.js 22.x (see `.nvmrc`)
 - npm or yarn package manager
 
 ### Installation
@@ -33,14 +33,14 @@ A responsive one-page portfolio website built with React.js and Tailwind CSS, fe
    ```
 
 4. **Open your browser**
-   Navigate to `http://localhost:3000` to view the website
+   Navigate to `http://localhost:5173` to view the website
 
 ## 📁 Project Structure
 
 ```
 portfolio-website/
+├── index.html
 ├── public/
-│   └── index.html
 ├── src/
 │   ├── components/
 │   │   ├── Navbar.js

@@ -1,38 +1,49 @@
 // Preload critical resources for better performance
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// Critical resources to preload
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 const criticalResources = [
-  '/profile-photo.png',
-  '/favicon.ico'
+  '/Suryansh_Profile_Pic.png',
+  '/favicon.ico',
 ];
 
-// Generate preload links
 const generatePreloadLinks = () => {
-  const links = criticalResources.map(resource => {
-    const ext = path.extname(resource);
-    const as = ext === '.png' || ext === '.jpg' || ext === '.jpeg' ? 'image' : 'font';
-    return `  <link rel="preload" href="${resource}" as="${as}" crossorigin>`;
-  }).join('\n');
-  
-  return links;
+  return criticalResources
+    .map((resource) => {
+      const ext = path.extname(resource);
+      const as = ext === '.png' || ext === '.jpg' || ext === '.jpeg' ? 'image' : 'font';
+      return `  <link rel="preload" href="${resource}" as="${as}" crossorigin>`;
+    })
+    .join('\n');
 };
 
-// Update public/index.html with preload links
 const updateIndexHtml = () => {
-  const indexPath = path.join(__dirname, '../public/index.html');
+  const indexPath = path.join(__dirname, '../index.html');
   let html = fs.readFileSync(indexPath, 'utf8');
-  
+
   const preloadLinks = generatePreloadLinks();
-  const headEndIndex = html.indexOf('</head>');
-  
-  if (headEndIndex !== -1) {
-    html = html.slice(0, headEndIndex) + '\n' + preloadLinks + '\n' + html.slice(headEndIndex);
-    fs.writeFileSync(indexPath, html);
-    console.log('✅ Preload links added to index.html');
+  const marker = '<!-- preload-links -->';
+
+  if (html.includes(marker)) {
+    html = html.replace(
+      new RegExp(`\\s*${marker}[\\s\\S]*?${marker}`, 'm'),
+      `\n${preloadLinks}\n  ${marker}`
+    );
+  } else {
+    const headEndIndex = html.indexOf('</head>');
+    if (headEndIndex !== -1) {
+      html =
+        html.slice(0, headEndIndex) +
+        `\n  ${marker}\n${preloadLinks}\n  ${marker}\n` +
+        html.slice(headEndIndex);
+    }
   }
+
+  fs.writeFileSync(indexPath, html);
+  console.log('Preload links added to index.html');
 };
 
-// Run the preload script
 updateIndexHtml();

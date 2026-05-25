@@ -1,11 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./public/index.html"
+    './index.html',
+    './src/**/*.{js,jsx,ts,tsx}',
   ],
-  // Enable JIT mode for better performance
-  mode: 'jit',
   theme: {
     extend: {
       colors: {
@@ -70,4 +68,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

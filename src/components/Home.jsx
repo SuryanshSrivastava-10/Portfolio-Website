@@ -14,11 +14,9 @@ const Home = () => {
     // Create new PDF document
     const doc = new jsPDF('p', 'mm', 'a4');
     const pageWidth = doc.internal.pageSize.getWidth();
-    const pageHeight = doc.internal.pageSize.getHeight();
     
     // Colors
     const primaryColor = [31, 41, 55]; // Dark gray
-    const secondaryColor = [59, 130, 246]; // Blue
     const textColor = [31, 41, 55]; // Dark gray
     const lightGray = [107, 114, 128]; // Light gray
     

@@ -44,15 +44,6 @@ const Certificates = () => {
     }
   ];
 
-  const getIssuerColor = (issuer) => {
-    const colors = {
-      'IIT Delhi': 'from-red-500 to-red-700',
-      'Coursera': 'from-blue-500 to-blue-700',
-      'LetsUpgrade': 'from-green-500 to-green-700'
-    };
-    return colors[issuer] || 'from-gray-500 to-gray-700';
-  };
-
   return (
     <section id="certificates" className="py-16 sm:py-20 lg:py-24 gradient-bg">
       <div className="container-max section-padding">

@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Projects = () => {
-  const [hoveredProject, setHoveredProject] = useState(null);
-
   const projects = [
     {
       id: 1,
@@ -119,8 +117,6 @@ const Projects = () => {
               <div
                 key={project.id}
                 className="group relative"
-                onMouseEnter={() => setHoveredProject(project.id)}
-                onMouseLeave={() => setHoveredProject(null)}
               >
                 {/* Project Card */}
                 <div className={`relative bg-space-dark-800/80 backdrop-blur-sm rounded-2xl p-8 border border-space-blue-500/20 hover:border-space-blue-400/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-space-blue-500/20 overflow-hidden h-full`}>
