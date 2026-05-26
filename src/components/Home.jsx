@@ -408,7 +408,7 @@ const Home = () => {
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full shadow-2xl border-4 border-white overflow-hidden z-10">
                 {/* Profile Image */}
                 <img 
-                  src="/profile-photo.png" 
+                  src="/Suryansh_Profile_Pic.png" 
                   alt="Suryansh Srivastava" 
                   className="w-full h-full object-cover rounded-full relative z-20"
                 />
