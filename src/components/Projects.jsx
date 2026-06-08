@@ -48,17 +48,18 @@ const Projects = () => {
       icon: '💻',
       gradient: 'from-orange-500 to-red-600',
       githubUrl: 'https://github.com/SuryanshSrivastava-10/Online-IDE-Platform.git',
+      viewdetails: 'https://github.com/SuryanshSrivastava-10/Online-IDE-Platform.git',
     },
   ];
 
-  const getCategoryColor = (category) => {
-    const colors = {
-      'id:1': 'from-blue-400 to-blue-600',
-      'id:2': 'from-yellow-400 to-orange-500',
-      'id:3': 'from-purple-400 to-purple-600',
-    };
-    return colors[category] || 'from-gray-400 to-gray-600';
-  };
+  // const getCategoryColor = (category) => {
+  //   const colors = {
+  //     'id:1': 'from-blue-400 to-blue-600',
+  //     'id:2': 'from-yellow-400 to-orange-500',
+  //     'id:3': 'from-purple-400 to-purple-600',
+  //   };
+  //   return colors[category] || 'from-gray-400 to-gray-600';
+  // };
 
   const handleContactClick = () => {
     const email = 'suryanshsri10@gmail.com';
