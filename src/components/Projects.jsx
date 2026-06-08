@@ -16,7 +16,7 @@ const Projects = () => {
       ],
       icon: '📝',
       gradient: 'from-blue-500 to-purple-600',
-      details="#",
+      details:"#",
       githubUrl: 'https://github.com/SuryanshSrivastava-10',
     },
     {
@@ -32,7 +32,7 @@ const Projects = () => {
       ],
       icon: '🎓',
       gradient: 'from-green-500 to-teal-600',
-      details="#",
+      details:"#",
       githubUrl: 'https://github.com/SuryanshSrivastava-10',
     },
     {
@@ -49,7 +49,7 @@ const Projects = () => {
       ],
       icon: '💻',
       gradient: 'from-orange-500 to-red-600',
-      details="https://github.com/SuryanshSrivastava-10/Online-IDE-Platform.git",
+      details:"https://github.com/SuryanshSrivastava-10/Online-IDE-Platform.git",
       githubUrl: 'https://github.com/SuryanshSrivastava-10/Online-IDE-Platform.git',
     },
   ];
