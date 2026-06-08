@@ -51,6 +51,15 @@ const Projects = () => {
     },
   ];
 
+  const getCategoryColor = (category) => {
+    const colors = {
+      'id:1': 'from-blue-400 to-blue-600',
+      'id:2': 'from-yellow-400 to-orange-500',
+      'id:3': 'from-purple-400 to-purple-600',
+    };
+    return colors[category] || 'from-gray-400 to-gray-600';
+  };
+
   const handleContactClick = () => {
     const email = 'suryanshsri10@gmail.com';
     const subject = 'Collaboration Inquiry';
