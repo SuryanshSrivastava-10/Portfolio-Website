@@ -47,7 +47,7 @@ const Projects = () => {
       ],
       icon: '💻',
       gradient: 'from-orange-500 to-red-600',
-      githubUrl: 'https://github.com/SuryanshSrivastava-10',
+      githubUrl: 'https://github.com/SuryanshSrivastava-10/Online-IDE-Platform.git',
     },
   ];
 
