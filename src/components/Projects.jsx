@@ -4,65 +4,66 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Comprehensive Blog Management System",
-      duration: "Oct 2024 – Dec 2024",
-      technologies: ["React.js", "Node.js", "MongoDB"],
+      title: 'Comprehensive Blog Management System',
+      duration: 'Oct 2024 – Dec 2024',
+      role: 'Full Stack Developer',
+      status: 'Completed',
+      technologies: ['React.js', 'Node.js', 'MongoDB'],
       description: [
-        "Developed this website using React.js, Node.js and MongoDB.",
-        "Developed this to simplify and streamline the process of creating, publishing, and organizing blog content. Allowing multiple users to interact with each other on the website.",
-        "Made post creation & editing section, content organization, and other sections in user management."
+        'Developed this website using React.js, Node.js and MongoDB.',
+        'Developed this to simplify and streamline the process of creating, publishing, and organizing blog content. Allowing multiple users to interact with each other on the website.',
+        'Made post creation & editing section, content organization, and other sections in user management.',
       ],
-      icon: "📝",
-      gradient: "from-blue-500 to-purple-600",
-      bgGradient: "from-blue-900/20 to-purple-900/20"
+      icon: '📝',
+      gradient: 'from-blue-500 to-purple-600',
+      githubUrl: 'https://github.com/SuryanshSrivastava-10',
     },
     {
       id: 2,
-      title: "Scholarship Redressal Portal",
-      duration: "Aug 2023 – Sept 2023",
-      technologies: ["HTML", "CSS", "JavaScript", "SQL", "Django", "Python"],
+      title: 'Scholarship Redressal Portal',
+      duration: 'Aug 2023 – Sept 2023',
+      role: 'Full Stack Developer',
+      status: 'Completed',
+      technologies: ['HTML', 'CSS', 'JavaScript', 'SQL', 'Django', 'Python'],
       description: [
-        "Built it using HTML, CSS, JavaScript, SQL and Django using Python.",
-        "It ensures students can independently track their scholarship status and disbursement, preventing unauthorized third-party interference."
+        'Built it using HTML, CSS, JavaScript, SQL and Django using Python.',
+        'It ensures students can independently track their scholarship status and disbursement, preventing unauthorized third-party interference.',
       ],
-      icon: "🎓",
-      gradient: "from-green-500 to-teal-600",
-      bgGradient: "from-green-900/20 to-teal-900/20"
+      icon: '🎓',
+      gradient: 'from-green-500 to-teal-600',
+      githubUrl: 'https://github.com/SuryanshSrivastava-10',
     },
     {
       id: 3,
-      title: "Online IDE Platform",
-      duration: "Nov 2022 – Dec 2022",
-      subtitle: "Built a Simple IDE Platform with Limited supporting languages of C, C++, Python, React.Js",
-      technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+      title: 'Online IDE Platform',
+      duration: 'Nov 2022 – Dec 2022',
+      role: 'Full Stack Developer',
+      status: 'Completed',
+      technologies: ['HTML', 'CSS', 'JavaScript', 'PHP'],
       description: [
-        "Developed this website using HTML, CSS, JavaScript and PHP.",
-        "Designed to provide developers with an online coding environment supporting multiple programming languages.",
-        "Features include syntax highlighting, code compilation, and real-time collaboration."
+        'Developed this website using HTML, CSS, JavaScript and PHP.',
+        'Designed to provide developers with an online coding environment supporting multiple programming languages.',
+        'Features include syntax highlighting, code compilation, and real-time collaboration.',
       ],
-      icon: "💻",
-      gradient: "from-orange-500 to-red-600",
-      bgGradient: "from-orange-900/20 to-red-900/20"
-    }
+      icon: '💻',
+      gradient: 'from-orange-500 to-red-600',
+      githubUrl: 'https://github.com/SuryanshSrivastava-10',
+    },
   ];
 
   const handleContactClick = () => {
     const email = 'suryanshsri10@gmail.com';
     const subject = 'Collaboration Inquiry';
-    const body = "Hi Suryansh, I would like to work with you on...";
+    const body = 'Hi Suryansh, I would like to work with you on...';
 
     const encodedSubject = encodeURIComponent(subject);
     const encodedBody = encodeURIComponent(body);
 
-    // Prefer Gmail app if available
     const gmailIOS = `googlegmail:///co?to=${email}&subject=${encodedSubject}&body=${encodedBody}`;
     const gmailIOSAlt = `gmail:///co?to=${email}&subject=${encodedSubject}&body=${encodedBody}`;
-
-    // Fallbacks
     const mailto = `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
     const gmailWeb = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodedSubject}&body=${encodedBody}`;
 
-    // Try iOS/Android Gmail scheme first, then mailto, then web
     const start = Date.now();
     const tryOpen = (url) => {
       try {
@@ -70,29 +71,29 @@ const Projects = () => {
       } catch (_) {}
     };
 
-    // Attempt primary Gmail scheme
     tryOpen(gmailIOS);
 
-    // If it didn't switch apps within ~1s, try alternate scheme
     setTimeout(() => {
       if (Date.now() - start < 1200) {
         tryOpen(gmailIOSAlt);
       }
     }, 600);
 
-    // Then fallback to mailto
     setTimeout(() => {
       if (Date.now() - start < 2400) {
         tryOpen(mailto);
       }
     }, 1400);
 
-    // Finally fallback to Gmail web compose
     setTimeout(() => {
       if (Date.now() - start < 3600) {
         window.open(gmailWeb, '_blank', 'noopener,noreferrer');
       }
     }, 2400);
+  };
+
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -105,126 +106,117 @@ const Projects = () => {
               My <span className="text-gradient">Projects</span>
             </h2>
             <p className="text-lg text-space-dark-300 max-w-3xl mx-auto">
-              Here are some of the exciting projects I've worked on. Each one represents a unique challenge 
+              Here are some of the exciting projects I&apos;ve worked on. Each one represents a unique challenge
               and an opportunity to learn and grow as a developer.
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-space-blue-400 to-cosmic-purple-400 mx-auto rounded-full mt-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-space-blue-400 to-cosmic-purple-400 mx-auto rounded-full mt-6" />
           </div>
 
           {/* Projects Grid */}
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
             {projects.map((project, index) => (
-              <div
-                key={project.id}
-                className="group relative"
-              >
-                {/* Project Card */}
-                <div className={`relative bg-space-dark-800/80 backdrop-blur-sm rounded-2xl p-8 border border-space-blue-500/20 hover:border-space-blue-400/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-space-blue-500/20 overflow-hidden h-full`}>
-                  {/* Animated Background Gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${project.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                  
-                  {/* Floating Particles Effect */}
-                  <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute top-4 right-4 w-2 h-2 bg-space-blue-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-500"></div>
-                    <div className="absolute bottom-6 left-6 w-1 h-1 bg-cosmic-purple-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-700"></div>
-                    <div className="absolute top-1/2 right-8 w-1.5 h-1.5 bg-space-blue-300 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-opacity duration-600"></div>
+              <div key={project.id} className="relative flex">
+                {/* Connector line between cards */}
+                {index < projects.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-4 lg:-right-5 w-8 lg:w-10 h-px bg-gradient-to-r from-space-dark-600/60 to-transparent z-10 -translate-y-1/2" />
+                )}
+
+                <article className="group flex flex-col w-full bg-[#1c2331]/90 rounded-2xl border border-white/[0.06] p-6 sm:p-7 shadow-lg shadow-black/20 hover:border-white/10 hover:shadow-xl hover:shadow-black/30 transition-all duration-300">
+                  {/* Header: icon + title + date */}
+                  <div className="flex items-start gap-4 mb-5">
+                    <div
+                      className={`flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${project.gradient} rounded-xl flex items-center justify-center text-xl sm:text-2xl shadow-md`}
+                    >
+                      {project.icon}
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-base sm:text-lg font-bold text-white leading-snug mb-1.5">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-space-dark-400">{project.duration}</p>
+                    </div>
                   </div>
 
-                  {/* Content */}
-                  <div className="relative z-10">
-                    {/* Project Icon & Title */}
-                    <div className="flex items-start space-x-4 mb-6">
-                      <div className={`w-16 h-16 bg-gradient-to-br ${project.gradient} rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                        {project.icon}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-space-blue-300 transition-colors duration-300">
-                          {project.title}
-                        </h3>
-                        {project.subtitle && (
-                          <p className="text-sm text-space-dark-400 mb-2 italic">
-                            {project.subtitle}
-                          </p>
-                        )}
-                        <div className="flex items-center text-space-blue-400 text-sm font-medium">
-                          <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
-                          </svg>
-                          {project.duration}
-                        </div>
-                      </div>
+                  {/* Role & Status */}
+                  <div className="grid grid-cols-2 gap-3 mb-5">
+                    <div className="bg-[#252d3d]/80 rounded-lg px-3 py-2.5 border border-white/[0.04]">
+                      <p className="text-xs text-space-dark-400 mb-0.5">My role</p>
+                      <p className="text-sm font-semibold text-white">{project.role}</p>
                     </div>
-
-                    {/* Technologies */}
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-space-dark-300 mb-3 uppercase tracking-wide">
-                        Technologies Used
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech, techIndex) => (
-                          <span
-                            key={techIndex}
-                            className={`px-3 py-1 bg-gradient-to-r ${project.gradient} text-white text-xs font-medium rounded-full shadow-md group-hover:scale-105 transition-transform duration-300`}
-                            style={{ animationDelay: `${techIndex * 100}ms` }}
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                    <div className="bg-[#252d3d]/80 rounded-lg px-3 py-2.5 border border-white/[0.04]">
+                      <p className="text-xs text-space-dark-400 mb-0.5">Status</p>
+                      <p className="text-sm font-semibold text-emerald-400">{project.status}</p>
                     </div>
+                  </div>
 
-                    {/* Description */}
-                    <div className="space-y-3">
-                      <h4 className="text-sm font-semibold text-space-dark-300 mb-3 uppercase tracking-wide">
-                        Description
-                      </h4>
+                  {/* Tech tags */}
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 text-xs font-medium text-space-dark-300 bg-[#252d3d] rounded-full border border-white/[0.04]"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Description */}
+                  <div className="flex-1 mb-6">
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">
+                      Description
+                    </h4>
+                    <div className="space-y-2.5">
                       {project.description.map((desc, descIndex) => (
                         <p
                           key={descIndex}
-                          className="text-space-dark-300 text-sm leading-relaxed group-hover:text-space-blue-200 transition-colors duration-300"
+                          className="text-sm text-space-dark-200 leading-relaxed"
                         >
                           {desc}
                         </p>
                       ))}
                     </div>
-
-                    {/* Hover Action Button */}
-                    <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <button className={`w-full py-3 bg-gradient-to-r ${project.gradient} text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-space-blue-500/25 transition-all duration-300 transform hover:scale-105`}>
-                        View Project Details
-                      </button>
-                    </div>
                   </div>
 
-                  {/* Decorative Elements */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-space-blue-500/10 to-transparent rounded-bl-3xl"></div>
-                  <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-cosmic-purple-500/10 to-transparent rounded-tr-3xl"></div>
-                </div>
-
-                {/* Connection Line (for visual flow) */}
-                {index < projects.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-space-blue-500/50 to-transparent transform -translate-y-1/2"></div>
-                )}
+                  {/* Footer buttons */}
+                  <div className="flex gap-3 mt-auto pt-2">
+                    <button
+                      type="button"
+                      onClick={scrollToContact}
+                      className="flex-1 py-2.5 px-4 text-sm font-medium text-white bg-[#252d3d] hover:bg-[#2d3748] border border-white/[0.08] rounded-lg transition-colors duration-200"
+                    >
+                      View Details
+                    </button>
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 py-2.5 px-4 text-sm font-medium text-white text-center bg-[#252d3d] hover:bg-[#2d3748] border border-white/[0.08] rounded-lg transition-colors duration-200"
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                </article>
               </div>
             ))}
           </div>
 
           {/* Call to Action */}
           <div className="text-center mt-16">
-            <div className="bg-space-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-space-blue-500/20">
+            <div className="bg-[#1c2331]/80 backdrop-blur-sm rounded-2xl p-8 border border-white/[0.06]">
               <h3 className="text-2xl font-bold text-white mb-4">
                 Interested in collaborating?
               </h3>
               <p className="text-space-dark-300 mb-6 max-w-2xl mx-auto">
-                I'm always excited to work on new projects and challenges. 
-                Let's create something amazing together!
+                I&apos;m always excited to work on new projects and challenges.
+                Let&apos;s create something amazing together!
               </p>
               <button
                 type="button"
                 onClick={handleContactClick}
                 className="btn-primary text-lg px-8 py-3 hover:scale-105 transition-transform duration-300 inline-block"
               >
-                Let's Work Together
+                Let&apos;s Work Together
               </button>
             </div>
           </div>
