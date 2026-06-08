@@ -16,6 +16,7 @@ const Projects = () => {
       ],
       icon: '📝',
       gradient: 'from-blue-500 to-purple-600',
+      details="#",
       githubUrl: 'https://github.com/SuryanshSrivastava-10',
     },
     {
@@ -31,6 +32,7 @@ const Projects = () => {
       ],
       icon: '🎓',
       gradient: 'from-green-500 to-teal-600',
+      details="#",
       githubUrl: 'https://github.com/SuryanshSrivastava-10',
     },
     {
@@ -47,8 +49,8 @@ const Projects = () => {
       ],
       icon: '💻',
       gradient: 'from-orange-500 to-red-600',
+      details="https://github.com/SuryanshSrivastava-10/Online-IDE-Platform.git",
       githubUrl: 'https://github.com/SuryanshSrivastava-10/Online-IDE-Platform.git',
-      viewdemo: 'https://github.com/SuryanshSrivastava-10/Online-IDE-Platform.git',
     },
   ];
 
@@ -181,13 +183,11 @@ const Projects = () => {
 
                   {/* Footer buttons */}
                   <div className="flex gap-3 mt-auto pt-2">
-                    <button
-                      type="button"
-                      onClick={scrollToContact}
-                      className="flex-1 py-2.5 px-4 text-sm font-medium text-white bg-[#252d3d] hover:bg-[#2d3748] border border-white/[0.08] rounded-lg transition-colors duration-200"
+                    <a href={project.details} target="_blank" rel="noopener noreferrer"
+                    className="flex-1 py-2.5 px-4 text-sm font-medium text-white bg-[#252d3d] hover:bg-[#2d3748] border border-white/[0.08] rounded-lg transition-colors duration-200"
                     >
-                      View Details
-                    </button>
+                      Project Details
+                    </a>
                     <a
                       href={project.githubUrl}
                       target="_blank"
