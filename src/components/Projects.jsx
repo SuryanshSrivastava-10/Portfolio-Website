@@ -15,7 +15,7 @@ const Projects = () => {
         'Made post creation & editing section, content organization, and other sections in user management.',
       ],
       icon: '📝',
-      gradient: 'from-blue-500 to-purple-600',
+      gradient: 'from-blue-500 to-white-600',
       details:"#",
       githubUrl: 'https://github.com/SuryanshSrivastava-10',
     },
@@ -23,7 +23,7 @@ const Projects = () => {
       id: 2,
       title: 'Scholarship Redressal Portal',
       duration: 'Aug 2023 – Sept 2023',
-      role: 'Full Stack Developer',
+      role: 'Frontend Developer',
       status: 'Completed',
       technologies: ['HTML', 'CSS', 'JavaScript', 'SQL', 'Django', 'Python'],
       description: [
@@ -39,7 +39,7 @@ const Projects = () => {
       id: 3,
       title: 'Online IDE Platform',
       duration: 'Nov 2022 – Dec 2022',
-      role: 'Full Stack Developer',
+      role: 'Web Developer',
       status: 'Completed',
       technologies: ['HTML', 'CSS', 'JavaScript', 'PHP'],
       description: [
@@ -184,7 +184,7 @@ const Projects = () => {
                   {/* Footer buttons */}
                   <div className="flex gap-3 mt-auto pt-2">
                     <a href={project.details} target="_blank" rel="noopener noreferrer"
-                    className="flex-1 py-2.5 px-4 text-sm font-medium text-white bg-[#252d3d] hover:bg-[#2d3748] border border-white/[0.08] rounded-lg transition-colors duration-200"
+                    className="flex-1 py-2.5 px-4 text-sm font-medium text-white text-center bg-[#252d3d] hover:bg-[#2d3748] border border-white/[0.08] rounded-lg transition-colors duration-200"
                     >
                       Project Details
                     </a>
