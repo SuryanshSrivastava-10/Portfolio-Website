@@ -153,7 +153,7 @@ const Projects = () => {
                       <h3 className="text-base sm:text-lg font-bold text-white leading-snug mb-1.5">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-space-dark-400 text-green-300">{project.duration}</p>
+                      <p className="text-sm text-green-300">{project.duration}</p>
                     </div>
                   </div>
 
