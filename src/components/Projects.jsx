@@ -4,6 +4,23 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: 'AI Code Optimization and Refactoring System',
+      duration: 'Nov 2025 – May 2026',
+      role: 'Backend Developer',
+      status: 'Completed',
+      technologies: ['React.js', 'Node.js', 'MongoDB'],
+      description: [
+        'Developed this website using React.js, Node.js and MongoDB.',
+        'Developed this to simplify and streamline the process of creating, publishing, and organizing blog content. Allowing multiple users to interact with each other on the website.',
+        'Made post creation & editing section, content organization, and other sections in user management.',
+      ],
+      icon: '📝',
+      gradient: 'from-blue-500 to-white-600',
+      details:"#",
+      githubUrl: 'https://github.com/SuryanshSrivastava-10',
+    },
+    {
+      id: 2,
       title: 'Comprehensive Blog Management System',
       duration: 'Oct 2024 – Dec 2024',
       role: 'Full Stack Developer',
@@ -20,7 +37,7 @@ const Projects = () => {
       githubUrl: 'https://github.com/SuryanshSrivastava-10',
     },
     {
-      id: 2,
+      id: 3,
       title: 'Scholarship Redressal Portal',
       duration: 'Aug 2023 – Sept 2023',
       role: 'Frontend Developer',
@@ -36,7 +53,7 @@ const Projects = () => {
       githubUrl: 'https://github.com/SuryanshSrivastava-10',
     },
     {
-      id: 3,
+      id: 4,
       title: 'Online IDE Platform',
       duration: 'Nov 2022 – Dec 2022',
       role: 'Web Developer',
