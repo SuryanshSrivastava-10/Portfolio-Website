@@ -153,7 +153,7 @@ const Projects = () => {
                       <h3 className="text-base sm:text-lg font-bold text-white leading-snug mb-1.5">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-space-dark-400">{project.duration}</p>
+                      <p className="text-sm text-space-dark-400 text-green-300">{project.duration}</p>
                     </div>
                   </div>
 
@@ -174,7 +174,7 @@ const Projects = () => {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 text-xs font-medium text-space-dark-900 bg-[#252d3d] rounded-full border border-white/[0.04]"
+                        className="px-3 py-1 text-xs font-medium text-space-dark-200 bg-[#252d3d] rounded-full border border-white/[0.04]"
                       >
                         {tech}
                       </span>
