@@ -190,7 +190,7 @@ const Projects = () => {
                       {project.description.map((desc, descIndex) => (
                         <p
                           key={descIndex}
-                          className="text-sm text-space-dark-200 leading-relaxed"
+                          className="text-sm text-space-dark-100 leading-relaxed"
                         >
                           {desc}
                         </p>
