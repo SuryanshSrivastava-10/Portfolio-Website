@@ -174,7 +174,7 @@ const Projects = () => {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 text-xs font-medium text-space-dark-300 bg-[#252d3d] rounded-full border border-white/[0.04]"
+                        className="px-3 py-1 text-xs font-medium text-space-dark-900 bg-[#252d3d] rounded-full border border-white/[0.04]"
                       >
                         {tech}
                       </span>
